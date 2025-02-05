@@ -19,12 +19,21 @@ cross-coupling catalytic system for chemistry.
 
 ## How to use it?
 
-To start with MEDUSA, first, install the required packages running. It is recommended to create new virtual environment
+To start with MEDUSA, first, install the required packages running. It is recommended to create new conda virtual environment
 for this purpose.
 
 ```bash
+conda create -n medusa python=3.9 pip=24.0 setuptools=65.5.0
 pip install -r requirements.txt
 ```
+You can create a .pth file in the site packages directory to add *medusa_repository_path*.
+
+```bash
+# find site directory
+SITEDIR=$(python -c "import site; print(site.getsitepackages()[0])")
+
+# create new .pth file with medusa_repository_path (run in root directory of Medusa)
+echo $(pwd) > "$SITEDIR/medusa.pth"
 
 If you want to build docs, you will also have to install Sphinx and furo theme, running
 
