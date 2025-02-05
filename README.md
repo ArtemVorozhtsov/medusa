@@ -34,6 +34,7 @@ SITEDIR=$(python -c "import site; print(site.getsitepackages()[0])")
 
 # create new .pth file with medusa_repository_path (run in root directory of Medusa)
 echo $(pwd) > "$SITEDIR/medusa.pth"
+```
 
 If you want to build docs, you will also have to install Sphinx and furo theme, running
 
